@@ -1,0 +1,31 @@
+<?php
+
+/* TROQUE EXTENSÃO DO ARQUIVO PARA .php E SUBSTITUA AS VARIÁVEIS ABAIXO DE ACORDO COM O BANCO DE DADOS */
+
+
+define("HOST", "ENDEREÇO_DO_BANCO_DE_DADOS");
+define("DB", "NOME_DO_BANCO_DE_DADOS");
+define("USER", "USUARIO");
+define("PASS", "SENHA");
+
+try {
+    $pdo = new PDO('mysql:host=' . HOST . ';dbname=' . DB, USER, PASS, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+} catch (PDOException $e) {
+    // Captura e exibe a mensagem de erro em caso de falha na conexão
+    echo "<h3 class='Erro_conexao'>Erro ao se conectar: " . $e->getMessage() . "</h3>";
+
+}
+
+
+?>
+
+
+<style>
+    .Erro_conexao {
+        color: blue;
+        text-align: center;
+        margin: 20px 0;
+    }
+</style>
