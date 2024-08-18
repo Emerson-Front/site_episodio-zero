@@ -11,8 +11,11 @@
 // Adicionar anime
 
 if (isset($_POST["btn_adicionar"])) {
+
+    $id_usuario = $_SESSION['id'];
+
     $anime = new Anime();
-    $anime->adicionar($_POST["nome_anime_input"], 0, 0);
+    $anime->adicionar($_POST["nome_anime_input"], 0, 0, $id_usuario);
     $nome = $anime->getNome();
     $temporada = $anime->getTemporada();
     $episodio = $anime->getEpisodio();
@@ -22,7 +25,7 @@ if (isset($_POST["btn_adicionar"])) {
     $sql = new Sql();
     $sql = $sql->getAdicionar();
     $sql = $pdo->prepare($sql);
-    $sql->execute([$nome, $temporada, $episodio]);
+    $sql->execute([$nome, $temporada, $episodio, $id_usuario]);
 
     Utilidades::atualizar();
 

@@ -4,7 +4,9 @@
 class Sql
 {
 
-    private $adicionar = "INSERT INTO `animes_lista` (`nome_anime`, `temporada`, `episodio`) VALUES (?, ?, ?)";
+    /* Lista de Animes */
+
+    private $adicionar = "INSERT INTO `animes_lista` (`nome_anime`, `temporada`, `episodio`, `id_usuario`) VALUES (?, ?, ?, ?)";
 
     private $deletar = "DELETE FROM `animes_lista` WHERE (`id_anime` = ?)";
 
@@ -24,6 +26,25 @@ class Sql
     {
         return $this->atualizar;
     }
+
+
+    /* Login */
+
+    private $login = "SELECT * FROM tb_usuarios WHERE nome = ? AND senha = ?";
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+    /* Registro de usuario */
+
+    private $registrar = "INSERT INTO `tb_usuarios` (`nome`, `senha`) VALUES (?, ?)";
+    public function getRegistrar_usuario()
+    {
+        return $this->registrar;
+    }
+
+
 }
 
 

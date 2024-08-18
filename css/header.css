@@ -1,0 +1,56 @@
+header {
+    background-color: rgb(10, 10, 10);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+
+header h1 {
+    color: white;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+header h1 a:hover {
+    cursor: pointer;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+header nav a {
+    padding: 17px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    border-bottom: 1px solid transparent;
+    transition: color 0.5s, border 0.5s;
+}
+
+header nav a:hover, .btn_sair:hover {
+    color: #ffae00;
+    border-bottom: 1px solid #ffae00;
+}
+
+header .btn_sair {
+    border: 0;
+    border-bottom: 1px solid transparent;
+    transition: color 0.5s, border 0.5s;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 17px;
+    margin: 0 20px;
+}
