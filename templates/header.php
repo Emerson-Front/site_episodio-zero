@@ -7,6 +7,7 @@
             <form action="" method="post">
                 <button type="submit" name="sair" class="btn_sair">Sair</button>
             </form>
+            <i class="bi bi-person-fill"></i>
     </ul>
 </nav>
 

@@ -6,8 +6,6 @@ header {
 
 }
 
-
-
 header h1 {
     color: white;
     cursor: pointer;
@@ -38,7 +36,7 @@ header nav a {
     transition: color 0.5s, border 0.5s;
 }
 
-header nav a:hover, .btn_sair:hover {
+header nav a:hover, .btn_sair:hover, .bi-person-fill:hover {
     color: #ffae00;
     border-bottom: 1px solid #ffae00;
 }
@@ -53,4 +51,12 @@ header .btn_sair {
     cursor: pointer;
     padding: 17px;
     margin: 0 20px;
+}
+
+.bi-person-fill {
+    color: white;
+    padding: 18px;
+    margin-right: 20px;
+    transition: color 0.5s, border 0.5s;
+
 }

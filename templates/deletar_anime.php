@@ -12,10 +12,7 @@ if (isset($_GET["btn_remover"])) {
 
     $sql->execute([$id_anime]);
 
-
-
 }
-
 
 ?>
 
@@ -25,11 +22,11 @@ if (isset($_GET["btn_remover"])) {
         var btn_remover = document.getElementById('btn_remover_' + key);
         btn_remover.style.display = 'block';
     }
-/*
-    function acao_remover(key) {
-        var deleteDiv = document.getElementById('anime_' + key);
-        deleteDiv.parentNode.removeChild(deleteDiv);
-
-    }
-*/
+    /*
+        function acao_remover(key) {
+            var deleteDiv = document.getElementById('anime_' + key);
+            deleteDiv.parentNode.removeChild(deleteDiv);
+    
+        }
+    */
 </script>

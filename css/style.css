@@ -1,3 +1,6 @@
+@import url('header.css');
+@import url('footer.css');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,11 +13,16 @@
 /* NOVO STYLE -->*/
 
 
-.centralizar{
+.centralizar {
     margin: auto;
     max-width: 1280px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
+.bloco_2 {
+    width: 50%;
+}
 
 
 
@@ -208,25 +216,31 @@ form button.btn_salvar:hover {
 }
 
 
-form button.btn_deletar {
-    color: rgb(255, 0, 0);
+div.botoes {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn_deletar,
+.btn_concluido {
+    background: transparent;
     border: 0px;
-    background-color: rgb(50, 50, 50);
-    font-size: 20px;
-    padding: 0px;
-
+    font-size: 30px;
+    color: rgb(255, 115, 0);
 }
 
-form button.btn_deletar:hover {
+.btn_deletar:hover,
+.btn_concluido:hover {
+    color: white;
     cursor: pointer;
-    background: rgb(255, 0, 0);
-    color: rgb(255, 255, 255);
-    border: 0px solid white;
+    border-bottom: 1px solid;
 }
 
-.btn_remover {
-    display: none;
+.btn_concluido {
+    color: #00a884;
 }
+
+
 
 .atualizar {
     border: 0px;
@@ -246,53 +260,7 @@ form button.btn_deletar:hover {
 }
 
 
-/* Footer -->*/
-footer {
-    background-color: rgb(20, 20, 20);
-    color: white;
-    padding-top: 80px;
-}
 
-footer .display {
-    display: flex;
-    padding-bottom: 50px;
-}
-
-.footer-lado {
-    width: 100%;
-    text-align: center;
-    line-height: 30px;
-}
-
-footer ul {
-    list-style-type: none;
-}
-
-
-footer ul li a {
-    display: inline-block;
-    color: white;
-    text-decoration: none;
-}
-
-.footer-info {
-    margin-top: 20px;
-    text-align: center;
-    color: white;
-    padding: 15px;
-    background-color: rgb(10, 10, 10);
-}
-
-.icon {
-    width: 40px;
-    background-color: white;
-    border-radius: 50%;
-    position: relative;
-    top: 10px;
-    right: 10px;
-}
-
-/* <-- Footer */
 
 
 

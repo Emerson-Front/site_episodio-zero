@@ -24,7 +24,6 @@ if (isset($_SESSION['erro'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="shortcut icon" href="../ico/zero.ico" type="image/x-icon">
     <title>Registro Episódio Zero</title>
@@ -56,11 +55,27 @@ if (isset($_SESSION['erro'])) {
 
     <?php
 
+
+
     if (isset($_POST['nome_registro']) && isset($_POST['senha_registro']) && isset($_POST['senha_confirm'])) {
 
         $nome_registro = Utilidades::validarUsuario(ucfirst($_POST['nome_registro']));
         $senha_registro = Utilidades::conferir_senha($_POST['senha_registro'], $_POST['senha_confirm']);
 
+        //count($usuario) Verifica se algum resultado foi encontrado.
+        $sql = new Sql();
+        $sql = $sql->getVerifique();
+        $sql = $pdo->prepare($sql);
+        $sql->execute([$nome_registro]);
+        $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+        if (count($resultado) != 0) {
+            $erro = "<p id='erro'>Nome de usuário já existe!</p>";
+            session_start();
+            $_SESSION['erro'] = $erro;
+            header("Location: " . $_SERVER['PHP_SELF']);
+            die;
+        }
 
         $sql = new Sql();
         $sql = $sql->getRegistrar_usuario();
@@ -68,6 +83,7 @@ if (isset($_SESSION['erro'])) {
         $sql->execute([$nome_registro, $senha_registro]);
 
 
+        /* Depois de registra, faz o login */
         $sql = new sql();
         $sql = $sql->getLogin();
         $sql = $pdo->prepare($sql);

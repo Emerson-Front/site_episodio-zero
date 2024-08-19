@@ -38,12 +38,17 @@ class Sql
 
     /* Registro de usuario */
 
+    private $verifique = "SELECT * FROM tb_usuarios WHERE nome = ?";
+
     private $registrar = "INSERT INTO `tb_usuarios` (`nome`, `senha`) VALUES (?, ?)";
     public function getRegistrar_usuario()
     {
         return $this->registrar;
     }
-
+    public function getVerifique()
+    {
+        return $this->verifique;
+    }
 
 }
 
