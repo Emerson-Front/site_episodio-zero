@@ -1,6 +1,0 @@
-function atualizar() {
-    location.reload();
-}
-
-
-

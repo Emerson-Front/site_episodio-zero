@@ -25,7 +25,7 @@ require("login/session.php");
     <link rel="shortcut icon" href="ico/zero.ico" type="image/x-icon">
 
     <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/script.js"></script>
+    <script type="module" src="js/main.js"></script>
 
     <title>Episódio Zero</title>
 
@@ -47,7 +47,7 @@ require("login/session.php");
             <?php
             require('templates/adicionar_anime.php');
             require("templates/calendario.php");
-            require('templates/anime.php');
+            require('templates/lista_anime/lista_anime.php');
             ?>
           
         </nav>
@@ -61,6 +61,7 @@ require("login/session.php");
             <h1>Concluídos</h1>
             <p style="color: white;">(Em desenvolvimento)</p>
             <ul id="container">
+                <?php require ('templates/concluidos/concluidos.php') ?>
 
                 <!--Lista preenchida dinamicamente-->
 

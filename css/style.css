@@ -242,29 +242,6 @@ div.botoes {
 
 
 
-.atualizar {
-    border: 0px;
-    font-size: 30px;
-    margin-top: 20px;
-    color: rgb(255, 115, 0);
-    background-color: rgb(50, 50, 50);
-    padding: 5px;
-}
-
-.atualizar:hover {
-    cursor: pointer;
-    color: white;
-    background: rgb(35, 35, 35);
-    border-radius: 50%;
-
-}
-
-
-
-
-
-
-
 @media screen and (max-width: 768px) {
     footer {
         padding-top: 0px;
@@ -306,7 +283,7 @@ div.botoes {
         border-bottom: 2px solid rgb(100, 100, 100);
     }
 
-    ul#container li a {}
+
 
     ul#container .barra {
 
@@ -315,11 +292,6 @@ div.botoes {
 
     ul#container .barra p {
         width: 120px;
-    }
-
-    ul#container li button.deleteBtn,
-    ul#container li button.salveBtn {
-        margin: 0 auto;
     }
 
     header .box {
