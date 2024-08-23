@@ -46,25 +46,29 @@ if (isset($_SESSION['erro'])) {
         $nome = ucfirst($_POST['nome']);
         $senha = $_POST['senha'];
 
+
         $sql = new sql();
-        $sql = $sql->getLogin();
+        $sql = $sql->getNome_usuario();
         $sql = $pdo->prepare($sql);
-        $sql->execute([$nome, $senha]);
+        $sql->execute([$nome]);
 
         $usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
 
+        $hash = $usuario[0]['senha'];
+
         //count($usuario) Verifica se algum resultado foi encontrado.
-        if (count($usuario) == 0) {
+        if (count($usuario) == 0 || !password_verify($senha, $hash)) {
 
             $erro = "<p id='erro'>Usuário ou senha incorretos!</p>";
-            
+
             session_start();
             $_SESSION['erro'] = $erro;
 
             header("Location: " . $_SERVER['PHP_SELF']);
             die;
-
+    
         } else {
+
             foreach ($usuario as $valor) {
                 $id = $valor["id"];
                 $nome = $valor['nome'];

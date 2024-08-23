@@ -28,7 +28,7 @@ foreach ($lista as $key => $value) {
             <button type='button' id='decremento_ep<?php echo $key; ?>'>-</button>
             <button type='button' id='incremento_ep<?php echo $key; ?>'>+</button>
 
-            <input type="checkbox" id="<?php echo $value['id_anime']; ?>" />
+            <input type="checkbox" id="<?php echo $value['id_anime']; ?>" class="input_check" />
         </div>
     </form>
     <?php

@@ -40,17 +40,17 @@ class Sql
 
     /* Login */
 
-    private $login = "SELECT * FROM tb_usuarios WHERE nome = ? AND senha = ?";
-    public function getLogin()
+    private $nome_usuario = "SELECT * FROM tb_usuarios WHERE nome = ?";
+    public function getNome_usuario()
     {
-        return $this->login;
+        return $this->nome_usuario;
     }
 
+    
     /* Registro de usuario */
-
     private $verifique = "SELECT * FROM tb_usuarios WHERE nome = ?";
-
     private $registrar = "INSERT INTO `tb_usuarios` (`nome`, `senha`) VALUES (?, ?)";
+    private $logar = "SELECT * FROM tb_usuarios WHERE nome = ? AND senha = ?";
     public function getRegistrar_usuario()
     {
         return $this->registrar;
@@ -58,6 +58,9 @@ class Sql
     public function getVerifique()
     {
         return $this->verifique;
+    }
+    public function getLogar(){
+        return $this->logar;
     }
 
 }

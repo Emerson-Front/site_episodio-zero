@@ -77,23 +77,24 @@ if (isset($_SESSION['erro'])) {
             die;
         }
 
+        // Codifica a senha transformando em um hash
+        $hash = password_hash($senha_registro, PASSWORD_DEFAULT);
+
         $sql = new Sql();
         $sql = $sql->getRegistrar_usuario();
         $sql = $pdo->prepare($sql);
-        $sql->execute([$nome_registro, $senha_registro]);
-
+        $sql->execute([$nome_registro, $hash]);
 
         /* Depois de registra, faz o login */
         $sql = new sql();
-        $sql = $sql->getLogin();
+        $sql = $sql->getLogar();
         $sql = $pdo->prepare($sql);
-        $sql->execute([$nome_registro, $senha_registro]);
+        $sql->execute([$nome_registro, $hash]);
         $usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($usuario as $valor) {
             $id = $valor['id'];
             $nome = $valor['nome'];
-            $senha = $valor['senha'];
         }
 
         session_start();

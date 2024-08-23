@@ -33,10 +33,11 @@ header nav a {
     text-decoration: none;
     color: #ffffff;
     border-bottom: 1px solid transparent;
-    transition: color 0.5s, border 0.5s;
+    transition: 0.5s;
 }
 
-header nav a:hover, .btn_sair:hover, .bi-person-fill:hover {
+header nav a:hover,
+.btn_sair:hover {
     color: #ffae00;
     border-bottom: 1px solid #ffae00;
 }
@@ -44,7 +45,7 @@ header nav a:hover, .btn_sair:hover, .bi-person-fill:hover {
 header .btn_sair {
     border: 0;
     border-bottom: 1px solid transparent;
-    transition: color 0.5s, border 0.5s;
+    transition: 0.5s;
     background: transparent;
     color: white;
     font-size: 16px;
@@ -53,10 +54,24 @@ header .btn_sair {
     margin: 0 20px;
 }
 
-.bi-person-fill {
+nav.usuario {
+    display: flex;
+    align-items: center;
     color: white;
-    padding: 18px;
-    margin-right: 20px;
-    transition: color 0.5s, border 0.5s;
+    padding: 17px;
+    border-bottom: 1px solid transparent;
+    transition: 0.5s;
+}
 
+nav.usuario:hover {
+    color: #ffae00;
+    border-bottom: 1px solid #ffae00;
+}
+
+nav.usuario p.nome_usuario {
+    margin: 0 5px;
+}
+
+nav.usuario i.bi-caret-down-fill {
+    font-size: 10px;
 }

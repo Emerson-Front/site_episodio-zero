@@ -1,5 +1,11 @@
 @import url('header.css');
 @import url('footer.css');
+@import url('index.css');
+@import url('sessao_anime_lista.css');
+@import url('sessao_concluidos.css');
+@import url('responsivo.css');
+
+
 
 * {
     margin: 0;
@@ -8,306 +14,27 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-
-
-/* NOVO STYLE -->*/
-
+body {
+    background: rgb(43, 43, 43)!important;
+}
 
 .centralizar {
     margin: auto;
-    max-width: 1280px;
+    max-width: 1100px;
     display: flex;
     flex-wrap: wrap;
+}
+
+.bloco_1{
+    width: 100%;
 }
 
 .bloco_2 {
     width: 50%;
 }
 
-
-
-
-/* <-- NOVO STYLE */
-
-
-
-body {
-    background-color: rgb(34, 34, 34);
+.bloco_3{
+    width: 33.3%;
 }
 
 
-.box {
-    align-items: center;
-    justify-content: space-between;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 10px;
-    text-align: center;
-}
-
-.box nav.container {
-    border: 5px solid rgb(78, 76, 76);
-    border-radius: 15px;
-    background-color: rgb(50, 50, 50);
-    padding: 30px 5px;
-    margin: 50px auto;
-    width: 100%;
-    min-width: 300px;
-    text-align: center;
-}
-
-.box nav.container h1 {
-    color: white;
-    margin-bottom: 20px;
-}
-
-.box nav.container input.nome_anime_input {
-    border: 3px solid rgb(78, 76, 76);
-    background: rgb(35, 35, 35);
-    border-radius: 10px;
-    padding: 10px 0;
-    margin-bottom: 10px;
-    width: 100%;
-    font-size: 16px;
-    text-align: center;
-    color: rgb(190, 121, 255);
-}
-
-.nome_anime_input::placeholder {
-    color: rgb(160, 160, 160);
-}
-
-
-input.btn_adicionar {
-    color: black;
-    font-size: 14px;
-    width: auto;
-    margin-bottom: 10px;
-    border-radius: 150px;
-    border: 2px solid rgb(100, 100, 100);
-    padding: 5px 10px;
-    background: rgb(130, 130, 130);
-}
-
-input.btn_adicionar:hover {
-    background-color: rgb(150, 150, 150);
-    cursor: pointer;
-    border: 2px solid rgb(255, 255, 255);
-    color: rgb(0, 255, 242);
-}
-
-/* CALENDARIO --> */
-
-ul.calendario {
-    display: flex;
-
-}
-
-ul.calendario li {
-    background: rgb(35, 35, 35);
-    list-style: none;
-    width: 100%;
-    padding: 5px 0;
-    margin: 5px 2px;
-}
-
-ul.calendario li a.selected {
-    color: red;
-}
-
-ul.calendario li a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    display: block;
-
-}
-
-/* <-- CALENDARIO */
-
-div.anime {
-    display: flex;
-    align-items: center;
-
-}
-
-div.anime p.nome_anime {
-    padding: 10px 10px;
-    color: rgb(255, 115, 0);
-    background: rgb(60, 60, 60);
-    border-radius: 10px;
-    overflow: auto;
-    width: 100%;
-    max-width: 500px;
-    border: 2px solid rgb(50 50 50);
-}
-
-div.anime p.nome_anime:hover {
-    cursor: pointer;
-    background: rgb(71, 71, 71);
-}
-
-div.anime p.temporada,
-p.ep {
-    display: flex;
-    padding: 5px 5px;
-    border-radius: 15px;
-    border: 1px solid rgb(100, 100, 100);
-    background: rgb(60, 60, 60);
-    color: rgb(255, 115, 0);
-    font-size: 15px;
-    align-items: baseline;
-    margin-left: 5px;
-}
-
-
-div.anime input {
-    color: rgb(255, 115, 0);
-    border: 0px;
-    background: rgb(60, 60, 60);
-    border-radius: 15px;
-    border-bottom: 1px solid #5fad9c;
-    width: 50px;
-    height: auto;
-    margin-left: 5px;
-    text-align: center;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-
-}
-
-div.anime button {
-    padding: 0px 10px;
-    margin: auto 3px;
-    border-radius: 50px;
-    border: 1px solid rgb(100, 100, 100);
-    background: rgb(60, 60, 60);
-    font-weight: lighter;
-    font-size: large;
-    color: red;
-}
-
-div.anime button:hover {
-    background: rgb(80, 80, 80);
-    color: white;
-    cursor: pointer;
-}
-
-
-
-
-
-form button.btn_salvar {
-    display: none;
-    color: #00a884;
-    font-size: 22px;
-    padding: 0px;
-    border: 0px;
-    background-color: rgb(50, 50, 50);
-}
-
-form button.btn_salvar:hover {
-    cursor: pointer;
-    background: rgb(14, 126, 107);
-    color: rgb(255, 255, 255);
-    border: 0px solid white;
-}
-
-
-div.botoes {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.btn_deletar,
-.btn_concluido {
-    background: transparent;
-    border: 0px;
-    font-size: 30px;
-    color: rgb(255, 115, 0);
-}
-
-.btn_deletar:hover,
-.btn_concluido:hover {
-    color: white;
-    cursor: pointer;
-    border-bottom: 1px solid;
-}
-
-.btn_concluido {
-    color: #00a884;
-}
-
-
-
-@media screen and (max-width: 768px) {
-    footer {
-        padding-top: 0px;
-    }
-
-    .footer-lado {
-        margin-top: 70px;
-
-    }
-
-    .display {
-        flex-direction: column;
-    }
-}
-
-
-
-
-
-/* DESIGNER RESPONSIVO */
-@media (max-width: 900px) {
-    ul#container {
-        margin: 15px 5px;
-    }
-}
-
-
-@media (max-width: 700px) {
-
-    ul#container {
-        margin: 15px 5px;
-    }
-
-    ul#container li {
-        align-items: center;
-        flex-direction: column;
-        padding: 10px 0;
-
-        border-bottom: 2px solid rgb(100, 100, 100);
-    }
-
-
-
-    ul#container .barra {
-
-        margin: 5px auto;
-    }
-
-    ul#container .barra p {
-        width: 120px;
-    }
-
-    header .box {
-        display: flex;
-        flex-direction: column;
-    }
-
-    header nav p {
-        margin: 5px 0;
-    }
-
-    header nav ul {
-        flex-direction: column;
-    }
-
-    header nav ul li {
-        margin: 3px 0;
-    }
-}
