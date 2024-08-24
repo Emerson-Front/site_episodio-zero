@@ -1,0 +1,131 @@
+SUBSTITUA A EXTENSÃO DO ARQUIVO POR .php E CONFIGURE O SERVIDOR SMTP DE ACORDO. 
+
+
+<?php
+include("../config.php");
+include('../classes/sql.php');
+require_once('../src/PHPMailer.php');
+require_once('../src/SMTP.php');
+require_once('../src/Exception.php');
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="shortcut icon" href="../ico/zero.ico" type="image/x-icon">
+    <title>Verificação</title>
+</head>
+
+<body>
+
+    <?php
+
+    session_start();
+    $nome = $_SESSION['nome'];
+    $email = $_SESSION['email'];
+    $senha = $_SESSION['senha'];
+
+    $codigo = $_POST['codigo'];
+
+
+    $mail = new PHPMailer(true);
+
+
+    try {
+        // Configurações do servidor
+        $mail->isSMTP();                          // Enviar usando SMTP
+        $mail->Host = ' DIGITE_O_SERVIDOR ';   // Servidor SMTP
+        $mail->SMTPAuth = true;                 // Ativar autenticação SMTP
+        $mail->Username = 'EMAIL'; // SMTP username
+        $mail->Password = 'SENHA_DO_EMAIL';          // SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Ativar criptografia TLS
+        $mail->Port = DIGITE_A_PORTA;                  // Porta TCP para TLS
+    
+        // Remetente e destinatário
+        $mail->setFrom('NOVAMENTE_O_EMAIL');    # Remetente
+        $mail->addAddress($email);     # Destinatário
+    
+        // Conteúdo do e-mail
+        $mail->isHTML(true);                      // Enviar como HTML
+        $mail->Subject = 'Assunto do E-mail';
+        $mail->Body = $codigo;
+        $mail->AltBody = 'Conteúdo alternativo em texto simples';
+
+        $mail->send();
+        // Se enviou
+        ?>
+        <form action="" method="post">
+            <label>Um código foi enviado para o seu e-mail:</label>
+            <input type="text" placeholder="Digite o código" name="codigo">
+            <button type="submit">Enviar</button>
+            <a href="registro.php">Cancelar</a>
+        </form>
+        <?php
+
+        if (isset($_POST['codigo'])) {
+
+            $digitado = (int)$_POST['codigo'];
+
+            if ($codigo == $digitado) {
+                // Codifica a senha transformando em um hash
+                $hash = password_hash($senha, PASSWORD_DEFAULT);
+
+                $sql = new Sql();
+                $sql = $sql->getRegistrar_usuario();
+                $sql = $pdo->prepare($sql);
+                $sql->execute([$nome, $email, $hash]);
+
+                // Depois de registra, faz o login 
+                $sql = new sql();
+                $sql = $sql->getLogar();
+                $sql = $pdo->prepare($sql);
+                $sql->execute([$nome, $hash]);
+                $usuario = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+                foreach ($usuario as $valor) {
+                    $id = $valor['id'];
+                    $nome = $valor['nome'];
+                }
+
+                session_start();
+                $_SESSION['id'] = $id;
+                $_SESSION['nome'] = $nome;
+
+                header('Location: /');
+
+            } else {
+                echo "Código invalido!: " . $digitado;
+                echo '<br>';
+                echo var_dump($digitado);
+                echo '<br>';
+                echo var_dump($codigo);
+                //header('Location: registro.php');
+            }
+        }
+
+
+    } catch (Exception $e) {
+        // Se não enviou
+        ?>
+        <form>
+            <label class="erro">Código não enviado! Erro: <?php echo $mail->ErrorInfo ?></label>
+            <a href="registro.php">Cancelar</a>
+        </form>
+        <?php
+    }
+
+    ?>
+
+
+</body>
+
+</html>

@@ -75,6 +75,10 @@ button:hover {
     background: rgba(46, 46, 46, 0.781);
 }
 
+button#btn_registrar{
+    border-bottom: 2px solid rgb(255, 0, 0);
+}
+
 p {
     margin-top: 20px;
     color: white;
@@ -128,6 +132,13 @@ a:hover {
     position: relative;
 }
 
+label.erro{
+    color: red;
+    font-style: italic;
+    background-color: #270f42ad;
+    overflow: auto;
+}
+
 span.mensagem {
     font-size: 14px;
     color: rgb(0, 255, 0);
@@ -136,7 +147,9 @@ span.mensagem {
 
 span.red {
     color: red;
+
 }
+
 
 
 @media screen and (max-width: 500px){

@@ -48,16 +48,20 @@ class Sql
 
     
     /* Registro de usuario */
-    private $verifique = "SELECT * FROM tb_usuarios WHERE nome = ?";
-    private $registrar = "INSERT INTO `tb_usuarios` (`nome`, `senha`) VALUES (?, ?)";
+    private $verifique_nome = "SELECT * FROM tb_usuarios WHERE nome = ?";
+    private $verifique_email = "SELECT * FROM tb_usuarios WHERE email = ?";
+    private $registrar = "INSERT INTO `tb_usuarios` (`nome`, `email`, `senha`) VALUES (?, ?, ?)";
     private $logar = "SELECT * FROM tb_usuarios WHERE nome = ? AND senha = ?";
     public function getRegistrar_usuario()
     {
         return $this->registrar;
     }
-    public function getVerifique()
+    public function getVerifique_nome()
     {
-        return $this->verifique;
+        return $this->verifique_nome;
+    }
+    public function getVerifique_email(){
+        return $this->verifique_email;
     }
     public function getLogar(){
         return $this->logar;
