@@ -105,21 +105,3 @@ document.getElementById('senha_confirm').addEventListener('input', function () {
 });
 
 
-
-
-/*
-// gerarar o código para enviar no e-mail
-let codigo = Math.floor(Math.random() * 9000) + 1000;
-
-$('#btn_registrar').click(function () {
-    $.ajax({
-        url: '../login/verificacao.php',
-        method: 'POST',
-        data: {
-            codigo: codigo
-        }
-    });
-});
-
-*/
-

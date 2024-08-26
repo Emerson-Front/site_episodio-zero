@@ -103,6 +103,7 @@ if (isset($_SESSION['erro'])) {
             $_SESSION['email'] = $email_registro;
             $_SESSION['senha'] = $senha_registro;
             header("Location: verificacao.php");
+            die();
         }
     }
 
