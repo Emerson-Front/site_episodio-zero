@@ -99,6 +99,7 @@ if (isset($_SESSION['erro'])) {
             die;
 
         } else {
+
             $_SESSION['nome'] = $nome_registro;
             $_SESSION['email'] = $email_registro;
             $_SESSION['senha'] = $senha_registro;

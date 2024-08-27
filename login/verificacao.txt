@@ -67,6 +67,8 @@ use PHPMailer\PHPMailer\Exception;
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Ativar criptografia TLS
         $mail->Port = DIGITE_A_PORTA;                  // Porta TCP para TLS
     
+        // Defina o charset como UTF-8
+        $mail->CharSet = 'UTF-8';
         // Remetente e destinatário
         $mail->setFrom('NOVAMENTE_O_EMAIL');    # Remetente
         $mail->addAddress($email);     # Destinatário
@@ -146,6 +148,7 @@ use PHPMailer\PHPMailer\Exception;
 
     } catch (Exception $e) {
         // Se não enviou
+        session_destroy();
         ?>
         <form>
             <label class="erro">Código não enviado! Erro: <?php echo $mail->ErrorInfo ?></label>
