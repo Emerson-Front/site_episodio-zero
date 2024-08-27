@@ -1,0 +1,46 @@
+/* DESIGNER RESPONSIVO */
+@media screen and (max-width: 1000px) {
+
+    /* Sessão Lista_animes -->*/
+    section.animes_lista div.anime {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        box-shadow: inset 0px -5px 10px 0px rgb(65, 8, 8);
+        border-radius: 20px;
+        padding: 15px 5px;
+    }
+
+    section.animes_lista div.anime:hover {
+        box-shadow: inset 0px -5px 10px 0px rgb(105, 12, 12);
+    }
+
+    section.animes_lista div.anime p.nome_anime {
+        margin-bottom: 5px;
+    }
+
+    /* <-- Sessão Lista_animes */
+
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    footer {
+        padding-top: 0px;
+    }
+
+    .footer-lado {
+        margin-top: 70px;
+
+    }
+
+    .display {
+        flex-direction: column;
+    }
+}

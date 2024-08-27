@@ -1,0 +1,300 @@
+section.animes_lista {
+    background: rgb(30, 30, 30);
+    margin: 100px 0;
+    padding: 40px 20px;
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px;
+}
+
+section.animes_lista form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+section.animes_lista form input {
+    border: 3px solid rgb(78, 76, 76);
+    background: rgb(50, 50, 50);
+    border-radius: 10px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    color: rgb(255, 115, 0);
+    transition: 0.5s;
+}
+
+.nome_anime_input::placeholder {
+    color: rgb(160, 160, 160);
+}
+.nome_anime_input:focus{
+    outline: none;
+    background-color: #3d3d3d;
+    box-shadow: 0 0px 10px 10px rgb(10, 41, 66);
+}
+
+
+section.animes_lista form .btn_adicionar {
+    color: black;
+    font-size: 14px;
+    width: 150px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-radius: 150px;
+    border: 2px solid rgb(100, 100, 100);
+    padding: 5px 10px;
+    background: rgb(130, 130, 130);
+    transition: 0.3s;
+}
+
+section.animes_lista form .btn_adicionar:hover {
+    background-color: rgb(48, 48, 48);
+    cursor: pointer;
+    color: rgb(255, 115, 0);
+    border: 2px solid rgb(61, 108, 236);
+    border-top: 0px;
+    border-radius: 50%;
+}
+
+/* CALENDARIO --> */
+
+ul.calendario {
+    display: flex;
+    text-align: center;
+
+}
+
+ul.calendario li {
+    background: rgb(35, 35, 35);
+    list-style: none;
+    width: 100%;
+    padding: 5px 0;
+    margin: 5px 2px;
+}
+
+ul.calendario li a.selected {
+    color: red;
+}
+
+ul.calendario li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    display: block;
+
+}
+
+/* <-- CALENDARIO */
+
+
+section.animes_lista div.anime {
+    display: flex;
+    align-items: center;
+    margin: 2px 0;
+    padding-bottom: 2px;
+}
+
+section.animes_lista div.anime p.nome_anime {
+    padding: 10px 10px;
+    text-align: center;
+    color: rgb(255, 115, 0);
+    background: rgb(60, 60, 60);
+    border-radius: 10px;
+    overflow: auto;
+    width: 100%;
+
+}
+
+section.animes_lista div.anime p.nome_anime:hover {
+    cursor: pointer;
+    background: rgb(71, 71, 71);
+    box-shadow: 0 0 8px 0 rgb(255, 255, 255);
+}
+
+section.animes_lista div.anime p.temporada,
+section.animes_lista div.anime p.ep {
+    display: flex;
+    padding: 5px;
+    border-radius: 15px;
+    border: 1px solid rgb(100, 100, 100);
+    background: rgb(60, 60, 60);
+    color: rgb(255, 115, 0);
+    font-size: 15px;
+    align-items: center;
+    margin-left: 5px;
+}
+
+section.animes_lista div.anime p.temporada:hover,
+section.animes_lista div.anime p.ep:hover {
+    box-shadow: 0 0 8px 0 rgb(255, 255, 255);
+}
+
+section.animes_lista div.anime input {
+    color: rgb(255, 115, 0);
+    border: 0px;
+    background: rgb(60, 60, 60);
+    border-radius: 15px;
+    border-bottom: 1px solid #5fad9c;
+    width: 50px;
+    height: 20px;
+    margin-left: 5px;
+    margin-bottom: auto;
+}
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type="number"]:focus {
+    outline: none;
+}
+
+
+
+section.animes_lista div.anime button {
+    padding: 0px 10px;
+    margin: auto 3px;
+    border-radius: 50px;
+    border: 1px solid rgb(100, 100, 100);
+    background: rgb(60, 60, 60);
+    font-weight: bolder;
+    font-size: large;
+    color: red;
+}
+
+section.animes_lista div.anime button:hover {
+    background: rgb(80, 80, 80);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 8px 0 rgb(255, 255, 255);
+}
+
+
+/* Oculta o checkbox padrão */
+section.animes_lista div.anime input.input_check {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: auto 0;
+    margin-left: 10px;
+    background-color: #a1a1a1;
+    padding: 0;
+    max-width: 20px;
+    min-width: 20px ; 
+    min-height: 20px;
+    max-height: 20px;
+    border: 2px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+section.animes_lista div.anime input.input_check:hover {
+    box-shadow: 0 0 8px 0 rgb(255, 255, 255);
+    border: 0;
+}
+
+/* Estiliza o checkbox marcado */
+section.animes_lista div.anime input.input_check:checked {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px;
+}
+
+/* Estiliza o ícone de verificação */
+section.animes_lista div.anime input.input_check:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 14px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+
+
+
+
+div.botoes {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.btn_deletar {
+    background: transparent;
+    border: 0px;
+    font-size: 30px;
+    color: rgb(255, 115, 0);
+    position: relative;
+}
+
+.btn_deletar:hover {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    box-shadow: 0 0 15px red;
+    background-color: rgba(255, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.btn_deletar::after {
+    content: 'Excluir';
+    position: absolute;
+    top: -30px;
+    /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    color: red;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.btn_concluido {
+    background: transparent;
+    border: 0px;
+    font-size: 30px;
+    color: #00a884;
+    position: relative;
+}
+
+/* Estilo ao passar o mouse */
+.btn_concluido:hover {
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 10px;
+    background-color: #777777;
+}
+
+/* Estilo da palavra que aparece ao passar o mouse */
+.btn_concluido::after {
+    content: 'Concluído';
+    position: absolute;
+    top: -30px;
+    /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Exibe a palavra ao passar o mouse */
+.btn_deletar:hover::after,
+.btn_concluido:hover::after {
+    opacity: 1;
+}

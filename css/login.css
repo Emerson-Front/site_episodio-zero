@@ -1,5 +1,3 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-
 body {
     background-image: url(../imagens/fundo.webp);
     background-position: top;
@@ -12,8 +10,7 @@ form {
     left: 50%;
     transform: translate(-50%, -50%);
     border: 1px solid rgb(230, 0, 255);
-    width: 50%;
-    max-width: 500px;
+    width: 500px;
     padding: 30px;
     border-radius: 30px;
     text-align: center;
@@ -77,6 +74,10 @@ button:hover {
     background: rgba(46, 46, 46, 0.781);
 }
 
+button#btn_registrar {
+    border-bottom: 2px solid rgb(255, 0, 0);
+}
+
 p {
     margin-top: 20px;
     color: white;
@@ -100,24 +101,18 @@ a:hover {
 }
 
 
-
-
-/*
-#erro_login {
-    text-align: center;
-    background-color: #313131;
-    font-size: 20px;
-    color: red;
-    margin-top: 150px;
+#codigo,
+#enviar {
+    display: none;
 }
-*/
+
 
 #erro {
     color: #721c24;
     background-color: #f8d7da;
     border: 3px solid #f5c6cb;
     padding: 12px 20px;
-    margin-top: 200px;
+    margin-top: 30px;
     border-radius: 8px;
     font-weight: 600;
     font-size: 16px;
@@ -130,6 +125,13 @@ a:hover {
     position: relative;
 }
 
+label.erro {
+    color: red;
+    font-style: italic;
+    background-color: #270f42ad;
+    overflow: auto;
+}
+
 span.mensagem {
     font-size: 14px;
     color: rgb(0, 255, 0);
@@ -138,5 +140,13 @@ span.mensagem {
 
 span.red {
     color: red;
+
 }
 
+
+
+@media screen and (max-width: 500px) {
+    form {
+        width: 85%;
+    }
+}

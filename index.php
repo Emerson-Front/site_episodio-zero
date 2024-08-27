@@ -3,13 +3,9 @@
 include("config.php");
 include("classes/utilidades.php");
 require("classes/sql.php");
-require("classes/anime.php");
 require("login/session.php");
 
 ?>
-
-
-
 
 
 
@@ -19,12 +15,13 @@ require("login/session.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="shortcut icon" href="ico/zero.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="imagens/zero.ico" type="image/x-icon">
 
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script type="module" src="js/main.js"></script>
 
     <title>Episódio Zero</title>
 
@@ -36,35 +33,37 @@ require("login/session.php");
         <?php require('templates/header.php'); ?>
     </header>
 
+    <p></p>
 
-    <div class="box">
 
-        <nav class="container">
+    <div class="centralizar">
+
+        <section class="animes_lista bloco_1">
             <!--Adicionar anime-->
             <?php
             require('templates/adicionar_anime.php');
-            require("templates/calendario.php");
-            require('templates/mostrar_anime.php');
+            //require("templates/calendario.php");
+            require('templates/lista_anime/lista_anime.php');
             ?>
-            <button class="atualizar" onclick="atualizar()"><i class="bi bi-arrow-clockwise"></i></button>
-        </nav>
+
+        </section>
     </div>
 
 
 
-    <div class="box">
-        <nav class="container">
+    <div class="centralizar">
+        <section class="concluidos bloco_1">
 
             <h1>Concluídos</h1>
-            <p style="color: white;">(Em desenvolvimento)</p>
-            <ul id="container">
 
-                <!--Lista preenchida dinamicamente-->
+            <?php require('templates/concluidos/concluidos.php') ?>
+
+            <!--Lista preenchida dinamicamente-->
 
             </ul>
 
 
-        </nav>
+        </section>
     </div>
 
     <footer>
@@ -74,8 +73,7 @@ require("login/session.php");
 
 
 
-    <script src="js/script.js"></script>
-    <script src="js/login.js"></script>
+
 
 </body>
 

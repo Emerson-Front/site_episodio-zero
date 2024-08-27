@@ -7,8 +7,6 @@
  * Não pode ter mais de 1 usuário com o mesmo nome
  * Primeiro caractar maiusculo
  */
-const btnRegistrar = document.getElementById('btn_registrar');
-
 
 document.getElementById('nome_registro').addEventListener('input', function () {
 
@@ -28,19 +26,18 @@ document.getElementById('nome_registro').addEventListener('input', function () {
         mensagem.textContent = "Minímo 5 caracteres";
         mensagem.className = 'red';
         focus.className = '';
-        btnRegistrar.disabled = true;
 
     } else {
         if (!regex.test(escrita)) {
             mensagem.textContent = 'Nome não disponível';
             mensagem.className = 'red';
             focus.className = '';
-            btnRegistrar.disabled = true;
+
+
         } else {
             mensagem.textContent = "Válido";
             mensagem.className = 'mensagem';
             focus.className = 'focus-green';
-            btnRegistrar.disabled = false;
         }
     }
 
@@ -55,8 +52,6 @@ document.getElementById('nome_registro').addEventListener('input', function () {
  * Não pode ter espaço
  */
 
-
-
 document.getElementById('senha_registro').addEventListener('input', function () {
 
     let escrita = this.value;
@@ -70,21 +65,19 @@ document.getElementById('senha_registro').addEventListener('input', function () 
         mensagem.textContent = "Minímo 6 caracteres";
         mensagem.className = 'red';
         focus.className = '';
-        btnRegistrar.disabled = true;
 
     } else {
         if (!regex.test(escrita)) {
             mensagem.textContent = 'Senha não pode ter espaço!';
             mensagem.className = 'red';
             focus.className = '';
-            btnRegistrar.disabled = true;
 
 
         } else {
             mensagem.textContent = "Válido";
             mensagem.className = 'mensagem';
             focus.className = 'focus-green';
-            btnRegistrar.disabled = false;
+
         }
     }
 
@@ -103,12 +96,12 @@ document.getElementById('senha_confirm').addEventListener('input', function () {
         mensagem.textContent = "Válido";
         mensagem.className = 'mensagem';
         focus.className = 'focus-green';
-        btnRegistrar.disabled = false;
     } else {
         mensagem.textContent = "Senhas não conferem";
         mensagem.className = 'red';
         focus.className = '';
-        btnRegistrar.disabled = true;
     }
 
 });
+
+

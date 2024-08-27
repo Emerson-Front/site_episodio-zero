@@ -14,7 +14,7 @@
 
     // ESTUDAR MAIS O DOM
 
-    /*
+    
         document.addEventListener('DOMContentLoaded', () => {
             const items = document.querySelectorAll('ul.calendario li a');
     
@@ -29,5 +29,5 @@
             });
         });
     
-        */
+        
 </script>

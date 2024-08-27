@@ -1,0 +1,57 @@
+footer {
+    margin-top: 100px;
+    background-color: rgb(20, 20, 20);
+    color: white;
+
+}
+
+footer {
+    text-align: center;
+    line-height: 30px;
+}
+
+footer .centralizar {
+    padding: 80px 0 50px 0;
+    align-items: center;
+}
+
+
+footer ul {
+    list-style-type: none;
+}
+
+
+footer ul li a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-info {
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    padding: 15px;
+    background-color: rgb(10, 10, 10);
+}
+
+.bi-github {
+    font-size: 30px;
+}
+
+#coracao {
+    transition: font-size 1s, color 1s;
+}
+
+.bi-heart-fill {
+    color: red; 
+    font-size: 17px;
+}
+
+.bi-heart-pulse {
+    font-size: 15px;
+}
+
+
+
+
