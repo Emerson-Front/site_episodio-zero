@@ -3,7 +3,6 @@
 include("config.php");
 include("classes/utilidades.php");
 require("classes/sql.php");
-require("classes/anime.php");
 require("login/session.php");
 
 ?>

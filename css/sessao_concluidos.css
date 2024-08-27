@@ -3,9 +3,148 @@ section.concluidos {
     padding: 40px 20px;
     border-radius: 30px;
     box-shadow: 10px 10px 10px;
+    position: relative;
 }
 
-section.concluidos h1{
+section.concluidos h1 {
     text-align: center;
     color: white;
+    margin-bottom: 50px;
+}
+
+
+section.concluidos div.concluido {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    margin: 20px 0;
+    width: 100%;
+}
+
+section.concluidos img {
+    width: 150px;
+    height: 200px;
+    border: 5px solid rgb(66, 66, 66);
+    border-radius: 10px;
+}
+
+
+section.concluidos div.detalhes {
+    padding: 20px;
+    max-width: 80%;
+
+}
+
+section.concluidos div.detalhes p {
+    margin: 5px 0;
+    color: #333;
+}
+
+section.concluidos div.detalhes .nome {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #35628f;
+}
+
+section.concluidos div.detalhes .data {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+section.concluidos div.detalhes .avaliacao {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    color: #f39c12;
+    /* Cor das estrelas */
+    margin: 5px 0;
+}
+
+section.concluidos div.detalhes .avaliacao .stars {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
+section.concluidos div.detalhes .notas {
+    background-color: #a1a1a1;
+    padding: 10px;
+    border-radius: 5px;
+    color: #2c3e50;
+    overflow-y: auto;
+    max-height: 100px;
+}
+
+section.concluidos div.detalhes .notas span {
+    font-weight: bolder;
+    color: black;
+}
+
+section.concluidos i.bi-pencil-square {
+    margin-left: auto;
+    /* Empurra o ícone para a direita */
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+    padding-right: 20px;
+}
+
+
+div.editar {
+    display: none;
+    position: absolute;
+    right: 80px;
+    border-radius: 20px;
+    background: rgb(66, 66, 66);
+    flex-direction: column;
+    padding: 25px;
+    color: white;
+    box-shadow: 0 5px 5px rgb(0, 0, 0);
+}
+
+
+div.editar h3 {
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+div.editar form{
+    display: flex;
+    flex-direction: column;
+}
+
+div.editar label {
+    margin: 5px 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+div.editar input {
+    text-align: center;
+    padding: 3px 0;
+    outline: none;
+    background-color: rgb(100, 100, 100);
+    border: 0;
+    color: #420c0c;
+}
+
+div.editar input::placeholder,
+textarea::placeholder {
+    color: rgb(0, 0, 0);
+}
+
+div.editar textarea {
+    text-align: center;
+    padding: 3px 0;
+    outline: none;
+    background-color: rgb(100, 100, 100);
+    width: 300px;
+    height: 100px;
+    resize: vertical;
+    color: #420c0c;
+}
+
+div.editar .btn_deletar::after {
+    content: 'Remover anime?';
 }

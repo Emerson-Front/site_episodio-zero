@@ -6,72 +6,85 @@ header {
 
 }
 
-header h1 {
+header h1 a {
     color: white;
     cursor: pointer;
     margin-left: 20px;
-}
-
-header h1 a {
-    color: white;
     text-decoration: none;
 }
 
-header h1 a:hover {
+div.usuario {
+    display: flex;
+    align-items: center;
+    color: white;
+    border-bottom: 1px solid transparent;
+    transition: 0.5s;
+    padding: 20px 0;
+    margin-right: 20px;
+}
+
+div.usuario:hover {
+    color: #ffae00;
+    border-bottom: 1px solid #ffae00;
     cursor: pointer;
 }
 
-header nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
+div.usuario i.bi-person-fill {
+    margin-right: 5px;
 }
 
-header nav a {
-    padding: 17px;
-    margin-left: 20px;
+div.usuario i.bi-caret-down-fill {
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+
+
+
+
+
+
+header nav.menu ul {
+    display: none;
+    background: rgb(100, 100, 100);
+    list-style: none;
+    text-align: center;
+    border-radius: 7px;
+    width: 150px;
+    height: auto;
+    position: absolute;
+    right: 1px;
+}
+
+
+nav.menu ul li{
+    padding: 10px 0px;
+}
+
+nav.menu ul li:hover{
+    box-shadow: inset 0px 0px 10px 1px;
+    cursor: pointer;
+}
+
+nav.menu ul a {
     text-decoration: none;
     color: #ffffff;
     border-bottom: 1px solid transparent;
-    transition: 0.5s;
 }
 
-header nav a:hover,
-.btn_sair:hover {
-    color: #ffae00;
-    border-bottom: 1px solid #ffae00;
-}
 
-header .btn_sair {
+
+nav.menu .btn_sair {
+    padding: 10px 0;
     border: 0;
-    border-bottom: 1px solid transparent;
-    transition: 0.5s;
     background: transparent;
     color: white;
     font-size: 16px;
+    width: 100%;
+    height: 100%;
+}
+
+nav.menu .btn_sair:hover{
     cursor: pointer;
-    padding: 17px;
-    margin: 0 20px;
-}
-
-nav.usuario {
-    display: flex;
-    align-items: center;
-    color: white;
-    padding: 17px;
-    border-bottom: 1px solid transparent;
-    transition: 0.5s;
-}
-
-nav.usuario:hover {
-    color: #ffae00;
-    border-bottom: 1px solid #ffae00;
-}
-
-nav.usuario p.nome_usuario {
-    margin: 0 5px;
-}
-
-nav.usuario i.bi-caret-down-fill {
-    font-size: 10px;
+    box-shadow: inset 0px 0px 10px 1px black;
 }

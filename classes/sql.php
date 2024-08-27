@@ -38,6 +38,33 @@ class Sql
     }
 
 
+    /* Animes concluidos */
+    private $concluidos = "SELECT * FROM tb_concluidos WHERE id_usuario = ?";
+
+    private $concluir = "INSERT INTO tb_concluidos (id_anime, nome_anime, data_concluido, id_usuario) SELECT id_anime, nome_anime, ?, id_usuario FROM animes_lista WHERE id_anime = ?";
+    private $atualizar_concluido = "UPDATE `tb_concluidos` SET `nome_anime` = ?, `notas` = ? WHERE (`id_anime` = ?)";
+    private $deletar_concluido = "DELETE FROM `tb_concluidos` WHERE (`id_anime` = ?)";
+
+    public function getConcluidos()
+    {
+        return $this->concluidos;
+    }
+    public function getConcluir()
+    {
+        return $this->concluir;
+    }
+    public function getAtualizar_concuido()
+    {
+        return $this->atualizar_concluido;
+    }
+    public function getDeletar_concluido()
+    {
+        return $this->deletar_concluido;
+    }
+
+
+
+
     /* Login */
 
     private $nome_usuario = "SELECT * FROM tb_usuarios WHERE nome = ?";
@@ -46,7 +73,7 @@ class Sql
         return $this->nome_usuario;
     }
 
-    
+
     /* Registro de usuario */
     private $verifique_nome = "SELECT * FROM tb_usuarios WHERE nome = ?";
     private $verifique_email = "SELECT * FROM tb_usuarios WHERE email = ?";
@@ -60,10 +87,12 @@ class Sql
     {
         return $this->verifique_nome;
     }
-    public function getVerifique_email(){
+    public function getVerifique_email()
+    {
         return $this->verifique_email;
     }
-    public function getLogar(){
+    public function getLogar()
+    {
         return $this->logar;
     }
 

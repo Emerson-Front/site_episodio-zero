@@ -1,5 +1,5 @@
 <?php
-require("deletar_anime.php");
+require("deletar-concluir.php");
 require('atualizar_anime.php');
 
 

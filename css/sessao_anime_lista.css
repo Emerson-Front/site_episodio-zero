@@ -35,7 +35,7 @@ section.animes_lista form input {
 }
 
 
-section.animes_lista form input.btn_adicionar {
+section.animes_lista form .btn_adicionar {
     color: black;
     font-size: 14px;
     width: 150px;
@@ -48,7 +48,7 @@ section.animes_lista form input.btn_adicionar {
     transition: 0.3s;
 }
 
-section.animes_lista form input.btn_adicionar:hover {
+section.animes_lista form .btn_adicionar:hover {
     background-color: rgb(48, 48, 48);
     cursor: pointer;
     color: rgb(255, 115, 0);
