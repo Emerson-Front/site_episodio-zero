@@ -31,16 +31,52 @@
 
 
 @media screen and (max-width: 768px) {
-    footer {
-        padding-top: 0px;
+
+    /* Sessão anime_lista--> */
+    section.animes_lista div.anime {
+        justify-content: left;
     }
 
-    .footer-lado {
-        margin-top: 70px;
-
+    section.animes_lista div.anime p.temporada,
+    section.animes_lista div.anime p.ep {
+        width: 60%;
+        padding-left: 20px;
+        text-align: center;
+        margin: 2px;
     }
 
-    .display {
-        flex-direction: column;
+    section.animes_lista div.anime p input {
+        margin: 0 10px;
     }
+
+    section.animes_lista div.anime input.input_check {
+        bottom: 17px;
+    }
+
+
+    /* <-- Sessão anime_lista */
+
+    /* Sessão Concluidos -->*/
+    div.editar {
+        position: absolute;
+        left: 5px;
+        width: 80%;
+    }
+
+    div.editar textarea#notas {
+        width: 100%;
+    }
+
+    div.avaliacao {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    div.detalhes .avaliacao .stars {
+        margin-left: 0px !important;
+    }
+
+    /* <-- Sessão Concluidos */
+
+
 }
