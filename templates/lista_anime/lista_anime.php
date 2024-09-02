@@ -10,10 +10,13 @@ $sql = $pdo->prepare($sql);
 $sql->execute([$_SESSION['id']]);
 $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
 foreach ($lista as $key => $value) {
+    
+    $capa = $value['url'];
+
     ?>
 
     <form method="get">
-        <div class='anime' id='<?php echo $value['id_anime']; ?>'>
+        <div style="background: url('<?php echo $capa ?>'); background-position: center; background-size: cover;" class='anime' id='<?php echo $value['id_anime']; ?>'>
             <p class='nome_anime'><?php echo $value['nome_anime']; ?></p>
 
 

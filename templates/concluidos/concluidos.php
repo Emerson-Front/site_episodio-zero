@@ -16,10 +16,13 @@ foreach ($concluidos as $key => $value) {
     $id = $value['id_anime'];
     $nome_anime = $value['nome_anime'];
     $notas = $value['notas'];
+    $capa = $value['url'];
+
 
     ?>
     <div id="anime_<?php echo $id ?>" class="concluido">
-        <img src="imagens/capa/padrao.jpeg" alt="Imagem do Anime">
+        <div style="background-image: url(<?php echo $capa ?>); background-position: center; background-size: cover;"
+            class="img"></div>
         <div class="detalhes">
             <p class="nome"><?php echo $nome_anime ?></p>
             <p class="data">Data de Conclusão: <?php echo $data ?></p>

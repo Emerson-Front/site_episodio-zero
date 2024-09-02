@@ -5,8 +5,7 @@ class Sql
 {
 
     /* Lista de Animes */
-
-    private $pegar_animes = "SELECT * FROM `animes_lista` WHERE `id_usuario` = ? ORDER BY `nome_anime`";
+    private $pegar_animes = "SELECT animes_lista.*, capa_anime.url FROM animes_lista LEFT JOIN capa_anime ON animes_lista.nome_anime = capa_anime.nome_anime WHERE animes_lista.id_usuario = ? ORDER BY animes_lista.nome_anime";
 
     private $adicionar = "INSERT INTO `animes_lista` (`nome_anime`, `temporada`, `episodio`, `id_usuario`) VALUES (?, ?, ?, ?)";
 
@@ -39,7 +38,7 @@ class Sql
 
 
     /* Animes concluidos */
-    private $concluidos = "SELECT * FROM tb_concluidos WHERE id_usuario = ?";
+    private $concluidos = "SELECT tb_concluidos.*, capa_anime.url FROM tb_concluidos LEFT JOIN capa_anime ON tb_concluidos.nome_anime = capa_anime.nome_anime WHERE tb_concluidos.id_usuario = ? ORDER BY tb_concluidos.nome_anime";
 
     private $concluir = "INSERT INTO tb_concluidos (id_anime, nome_anime, data_concluido, id_usuario) SELECT id_anime, nome_anime, ?, id_usuario FROM animes_lista WHERE id_anime = ?";
     private $atualizar_concluido = "UPDATE `tb_concluidos` SET `nome_anime` = ?, `notas` = ? WHERE (`id_anime` = ?)";
@@ -60,6 +59,22 @@ class Sql
     public function getDeletar_concluido()
     {
         return $this->deletar_concluido;
+    }
+
+
+
+    /* Capas dos animes */
+    private $buscar_capa = "SELECT * FROM capa_anime WHERE nome_anime = ?";
+    private $adicionar_capa = "INSERT INTO capa_anime (`nome_anime`, `url`) VALUES (?, ?)";
+
+    public function getBuscar_capa()
+    {
+        return $this->buscar_capa;
+    }
+
+    public function getAdicionar_capa()
+    {
+        return $this->adicionar_capa;
     }
 
 

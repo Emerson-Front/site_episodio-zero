@@ -33,7 +33,6 @@ require("login/session.php");
         <?php require('templates/header.php'); ?>
     </header>
 
-    <p></p>
 
 
     <div class="centralizar">
