@@ -98,16 +98,18 @@ section.animes_lista div.anime p.nome_anime {
     padding: 10px 10px;
     text-align: center;
     color: rgb(255, 115, 0);
-    background: rgb(60, 60, 60);
+    background: rgb(60, 60, 60, 0.8);
     border-radius: 10px;
     overflow: auto;
     width: 100%;
+    font-weight: bolder;
+    font-variant: small-caps;
 
 }
 
 section.animes_lista div.anime p.nome_anime:hover {
     cursor: pointer;
-    background: rgb(71, 71, 71);
+    background: rgb(71, 71, 71, 0.9);
     box-shadow: 0 0 8px 0 rgb(255, 255, 255);
 }
 
