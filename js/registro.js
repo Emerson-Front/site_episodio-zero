@@ -7,7 +7,6 @@
  * Não pode ter mais de 1 usuário com o mesmo nome
  * Primeiro caractar maiusculo
  */
-
 document.getElementById('nome_registro').addEventListener('input', function () {
 
     let escrita = this.value;

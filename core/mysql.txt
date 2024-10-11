@@ -29,26 +29,3 @@ try {
         margin: 20px 0;
     }
 </style>
-
-
-<?php
-/* Configuração da pesquisa dinamica (Google Cloud) para a capa dos animes --> */
-
-class Capa
-{
-
-    static function construir_url($pesquisa)
-    {
-        define('TIPO', 'image');
-        define('QUANTIDADE', 1);
-        define('API_KEY', 'AQUI_VAI_A_CHAVE_DE_API'); // Chave de API
-        define('CX', 'AQUI_VAI_O_ID_DO_MECANISMO_DE_PESQUISA'); // ID do mecanismo de pesquisa personalizado
-
-        return "https://www.googleapis.com/customsearch/v1?q=$pesquisa&searchType=" . TIPO . "&num=" . QUANTIDADE . "&key=" . API_KEY . "&cx=" . CX;
-
-    }
-
-}
-
-
-?>

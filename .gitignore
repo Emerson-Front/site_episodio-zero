@@ -1,5 +1,7 @@
 config.php
+mysql.php
 testes
 verificacao.php
-src
 banco_de_dados.sql
+capa.php
+verificacaoModel.php

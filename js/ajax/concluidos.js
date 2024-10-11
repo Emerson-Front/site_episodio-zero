@@ -1,7 +1,7 @@
 let editar = '[id^="editar_"]';
 $(editar).click(function () {
-    let nome = $(this).data('nome');
-    let editar = $(`div[data-nome='${nome}']`);
+    let nome = $.escapeSelector($(this).data('nome'));
+    let editar = $(`div[data-nome=` + nome);
 
     if (editar.css('display') === 'none') {
         editar.css('display', 'flex');
@@ -24,12 +24,8 @@ $('[name="salvar"]').click(function () {
     let notas = textarea.val();
     let tipo = 'salvar';
 
-    if ($(nome).length > 0 || $(notas).length > 0) {
-        alert('Sem tags HTML!');
-    } else {
-        ajax_editar(id_anime, nome, notas, tipo);
-        location.reload();
-    }
+    ajax_editar(id_anime, nome, notas, tipo);
+    location.reload();
 
 });
 
@@ -59,36 +55,36 @@ function ajax_editar(id_anime, nome, notas, tipo) {
 
 
 
-$('.star1').click(function(){
+$('.star1').click(function () {
     let id_anime = $(this).data('id');
     ajax_star(1, id_anime);
     location.reload();
-    
+
 });
 
-$('.star2').click(function(){
+$('.star2').click(function () {
     let id_anime = $(this).data('id');
-    ajax_star(2 ,id_anime);
+    ajax_star(2, id_anime);
     location.reload();
 });
-$('.star3').click(function(){
+$('.star3').click(function () {
     let id_anime = $(this).data('id');
-    ajax_star(3 ,id_anime);
+    ajax_star(3, id_anime);
     location.reload();
 });
-$('.star4').click(function(){
+$('.star4').click(function () {
     let id_anime = $(this).data('id');
-    ajax_star(4 ,id_anime);
+    ajax_star(4, id_anime);
     location.reload();
 });
-$('.star5').click(function(){
+$('.star5').click(function () {
     let id_anime = $(this).data('id');
-    ajax_star(5 ,id_anime);
+    ajax_star(5, id_anime);
     location.reload();
 });
 
 
-function ajax_star(star, id_anime){
+function ajax_star(star, id_anime) {
     $.ajax({
         url: '',
         method: 'POST',

@@ -44,7 +44,7 @@ $('input[type="checkbox"]').change(function () {
 // Função AJAX
 function ajax(id_anime, tipo) {
     return $.ajax({
-        url: '', // Coloque sua URL aqui
+        url: '',
         method: 'POST',
         data: {
             id_anime: id_anime,

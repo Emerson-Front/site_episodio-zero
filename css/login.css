@@ -1,14 +1,16 @@
-body {
-    background-image: url(../imagens/fundo.webp);
+.fundo_login {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url('/site_episodio-zero/mvc/views/pages/imagens/fundo.webp');
     background-position: top;
+    background-size: contain;
+    z-index: -1;
 }
 
-form {
+form.login {
     display: grid;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 80px auto 180px;
     border: 1px solid rgb(230, 0, 255);
     width: 500px;
     padding: 30px;
@@ -17,17 +19,17 @@ form {
     background: #000000ad;
 }
 
-h1 {
+form.login h1 {
     color: white;
     margin-bottom: 15px;
 }
 
-label {
+form.login label {
     color: rgb(255, 255, 255);
     margin: 10px 0;
 }
 
-input {
+form.login input {
     color: rgb(0, 255, 179);
     text-align: center;
     font-size: 15px;
@@ -40,16 +42,16 @@ input {
     width: 100%;
 }
 
-input::placeholder {
+form.login input::placeholder {
     color: rgba(0, 255, 179, 0.438);
 }
 
-.focus-green:focus {
+form.login .focus-green:focus {
     transition: border-color 0.3s;
     border-bottom: 1px solid rgb(0, 255, 0);
 }
 
-input:focus {
+form.login input:focus {
     transition: border-color 0.3s;
     background: rgba(0, 0, 0, 0.5);
     border-bottom: 1px solid rgb(255, 0, 0);
@@ -58,7 +60,7 @@ input:focus {
 }
 
 
-button {
+form.login button {
     color: white;
     background-color: black;
     margin: 20px auto;
@@ -70,20 +72,20 @@ button {
     font-weight: bolder;
 }
 
-button:hover {
+form.login button:hover {
     background: rgba(46, 46, 46, 0.781);
 }
 
-button#btn_registrar {
+form.login button#btn_registrar {
     border-bottom: 2px solid rgb(255, 0, 0);
 }
 
-p {
+form.login p {
     margin-top: 20px;
     color: white;
 }
 
-a {
+form.login a {
     text-decoration: none;
     font-weight: bold;
     color: rgb(153, 135, 255);
@@ -92,7 +94,7 @@ a {
     transition: border-radius 0.3s, background-color 0.3s;
 }
 
-a:hover {
+form.login a:hover {
     background: rgba(0, 0, 0, 0.5);
     border-left: 2px solid rgb(230, 0, 255);
     border-right: 2px solid rgb(230, 0, 255);
@@ -101,52 +103,50 @@ a:hover {
 }
 
 
-#codigo,
-#enviar {
-    display: none;
-}
-
-
 #erro {
+    display: inline;
     color: #721c24;
     background-color: #f8d7da;
     border: 3px solid #f5c6cb;
     padding: 12px 20px;
-    margin-top: 30px;
     border-radius: 8px;
     font-weight: 600;
     font-size: 16px;
     text-align: center;
     box-shadow: 0px 0px 6px 10px rgba(219, 0, 0, 0.4);
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
     z-index: 999;
-    position: relative;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
 }
 
-label.erro {
+form.login label.erro {
     color: red;
     font-style: italic;
     background-color: #270f42ad;
     overflow: auto;
 }
 
-span.mensagem {
+form.login span.mensagem {
     font-size: 14px;
     color: rgb(0, 255, 0);
 
 }
 
-span.red {
+form.login span.red {
     color: red;
 
 }
 
+form.verificacao {
+    margin: 200px auto 300px auto;
+}
 
 
 @media screen and (max-width: 500px) {
-    form {
+    form.login {
         width: 85%;
     }
 }
