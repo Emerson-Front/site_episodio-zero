@@ -8,8 +8,8 @@ class Application
 
     public function executar()
     {
-        if (isset($_GET['url'])) {
 
+        if (isset($_GET['url'])) {
             $url = explode('/', $_GET['url']);
             $classe = 'mvc\\controllers\\' . $url[0] . 'Controller';
 

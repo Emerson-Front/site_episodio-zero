@@ -20,9 +20,11 @@ spl_autoload_register(function ($class) {
     if (file_exists($caminho)) {
         require $caminho;
     } else {
-        header('Location: mvc/views/pages/page_erro.php');
+        header('Location: erro');
         die;
-        # echo "Arquivo não encontrado: $caminho";
+        //echo "Arquivo não encontrado: $caminho";
+        //echo '<br>';
+        //echo "Classe: $class"; 
     }
 
 });

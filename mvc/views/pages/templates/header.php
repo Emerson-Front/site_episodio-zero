@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/site_episodio-zero/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="shortcut icon" href="/mvc/views/pages/imagens/zero.ico" type="image/x-icon">
@@ -36,7 +36,7 @@
     <header>
 
 
-        <h1><a href="home">Episódio Zero</a></h1>
+        <h1><a href="/home">Episódio Zero</a></h1>
 
         <nav>
 

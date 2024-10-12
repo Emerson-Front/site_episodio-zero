@@ -5,13 +5,19 @@ namespace mvc\controllers;
 use mvc\models\HomeModel;
 
 
-class HomeController extends Controller
+class HomeController
 {
 
     public function index()
     {
 
         \mvc\views\MainView::render('home');
+
+        if (!isset($_SESSION['id']) || !isset($_SESSION['nome'])) {
+            header('Location: acesso');
+            die;
+        }
+
 
         if (isset($_POST["btn_adicionar"])) {
             $adicionar = new HomeModel;
