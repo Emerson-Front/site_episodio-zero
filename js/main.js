@@ -1,4 +1,8 @@
+
+
 import './ajax/atualizar_anime.js';
 import './ajax/checkbox.js';
 import './ajax/concluidos.js';
-import './header.js';
+import './registro.js';
+
+
