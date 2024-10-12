@@ -25,7 +25,7 @@
 
     $nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Faça o Login!';
 
-    if ($nome != "Faça o Login!") {
+    if (isset($_SESSION['nome'])) {
         $display = 'block';
     } else {
         $display = 'none';

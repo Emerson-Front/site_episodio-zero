@@ -9,12 +9,13 @@ class Application
     public function executar()
     {
         if (isset($_GET['url'])) {
+
             $url = explode('/', $_GET['url']);
-            $classe = 'controllers\\' . $url[0] . 'Controller';
+            $classe = 'mvc\\controllers\\' . $url[0] . 'Controller';
 
         } else {
             $url = self::DEFAULT;
-            $classe = 'controllers\\' . self::DEFAULT . 'Controller';
+            $classe = 'mvc\\controllers\\' . self::DEFAULT . 'Controller';
         }
 
         $controller = new $classe;

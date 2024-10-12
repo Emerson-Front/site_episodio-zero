@@ -1,6 +1,6 @@
 <?php
 
-namespace models;
+namespace mvc\models;
 
 class AcessoModel
 {

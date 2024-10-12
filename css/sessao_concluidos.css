@@ -34,13 +34,14 @@ section.concluidos div.img {
 
 section.concluidos div.detalhes {
     padding: 20px;
-    max-width: 80%;
+    width: 100%;
 
 }
 
 section.concluidos div.detalhes p {
     margin: 5px 0;
     color: #333;
+    word-break: break-word; 
 }
 
 section.concluidos div.detalhes .nome {
@@ -59,7 +60,6 @@ section.concluidos div.detalhes .avaliacao {
     align-items: center;
     font-size: 1.2em;
     color: #f39c12;
-    /* Cor das estrelas */
     margin: 5px 0;
 }
 
@@ -75,7 +75,7 @@ section.concluidos div.detalhes .notas {
     border-radius: 5px;
     color: #2c3e50;
     overflow-y: auto;
-    max-height: 100px;
+    max-height: 200px;
 }
 
 section.concluidos div.detalhes .notas span {
@@ -85,7 +85,6 @@ section.concluidos div.detalhes .notas span {
 
 section.concluidos i.bi-pencil-square {
     margin-left: auto;
-    /* Empurra o ícone para a direita */
     font-size: 1.5em;
     color: white;
     cursor: pointer;

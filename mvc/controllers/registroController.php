@@ -1,14 +1,14 @@
 <?php
 
-namespace controllers;
-use models\RegistroModel;
+namespace mvc\controllers;
+use mvc\models\RegistroModel;
 
 class RegistroController
 {
     public function index()
     {
 
-        \views\MainView::render('registro');
+        \mvc\views\MainView::render('registro');
 
 
         if (isset($_POST['btn_registrar'])) {

@@ -1,6 +1,6 @@
 <?php
-$grid = controllers\VerificacaoController::display('grid');
-$none = controllers\VerificacaoController::display('none');
+$grid = mvc\controllers\VerificacaoController::display('grid');
+$none = mvc\controllers\VerificacaoController::display('none');
 ?>
 <div class="fundo_login"></div>
 

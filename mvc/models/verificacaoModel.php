@@ -1,20 +1,22 @@
 <?php
 
-namespace models;
-/*
+namespace mvc\models;
+
 require_once('src/PHPMailer.php');
 require_once('src/SMTP.php');
 require_once('src/Exception.php');
-*/
+
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+
+\Config::SMTP_email();
+
+
 class VerificacaoModel
 {
-    const HOST = 'DIGITE_O_SERVIDOR';   // Servidor SMTP
-    const EMAIL = 'EMAIL';              // SMTP username
-    const SENHA = 'SENHA_DO_EMAIL';     // SMTP password
-    const PORTA = PORTAL;               // Porta TCP para TLS
+
 
     private $mail;
 
@@ -38,7 +40,7 @@ class VerificacaoModel
 
     private function Destinatario($emailDestinatario)
     {
-        $this->mail->setFrom(self::EMAIL, 'Episódio Zero');
+        $this->mail->setFrom(self::EMAIL);
         $this->mail->addAddress($emailDestinatario);
     }
 
@@ -71,11 +73,12 @@ class VerificacaoModel
 
     public function enviarCodigo($emailDestinatario, $codigo)
     {
+
         try {
             $this->Destinatario($emailDestinatario);
             $this->mail->isHTML(true);
             $this->mail->Subject = 'Código de verificação de E-mail';
-            $this->mail->Body = $this->CorpoEmail($codigo);
+            $this->mail->Body = 'teste';//$this->CorpoEmail($codigo);
             $this->mail->send();
             return true;
         } catch (Exception $e) {

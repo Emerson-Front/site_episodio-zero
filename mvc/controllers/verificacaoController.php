@@ -1,14 +1,14 @@
 <?php
 
-namespace controllers;
-use models\VerificacaoModel;
+namespace mvc\controllers;
+use mvc\models\VerificacaoModel;
 
 class VerificacaoController
 {
     public function index()
     {
 
-        \views\MainView::render('verificacao');
+        \mvc\views\MainView::render('verificacao');
 
 
         if (isset($_POST['validar'])) {

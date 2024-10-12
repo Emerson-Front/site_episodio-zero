@@ -1,7 +1,8 @@
 <?php
 
-namespace controllers;
-use models\HomeModel;
+namespace mvc\controllers;
+
+use mvc\models\HomeModel;
 
 
 class HomeController extends Controller
@@ -10,7 +11,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        \views\MainView::render('home');
+        \mvc\views\MainView::render('home');
 
         if (isset($_POST["btn_adicionar"])) {
             $adicionar = new HomeModel;

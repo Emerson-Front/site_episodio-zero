@@ -1,0 +1,32 @@
+<?php
+
+class Config
+{
+    public static function SMTP_email()
+    {
+        define('HOST', 'DIGITE_O_SERVIDOR_SMTP');
+        define('EMAIL', 'EMAIL_OFICIAL');
+        define('SENHA', 'SENHA');
+        define('PORTA', 587);
+    }
+
+    public static function MySql()
+    {
+        define("HOST", "ENDEREÇO_DO_BANCO_DE_DADOS");
+        define("DB", "NOME_DO_BANCO_DE_DADOS");
+        define("USER", "USUARIO");
+        define("PASS", "SENHA");
+
+    }
+
+    // Ferramenta de pesquisa do Google (CAPA de anime)
+    public static function construir_url($pesquisa)
+    {
+        define('TIPO', 'image');
+        define('QUANTIDADE', 1);
+        define('API_KEY', 'CHAVE_DE_API'); // Chave de API
+        define('CX', 'ID_MECANISMO_DE_BUSCA'); // ID do mecanismo de pesquisa personalizado
+
+        return "https://www.googleapis.com/customsearch/v1?q=$pesquisa&searchType=" . TIPO . "&num=" . QUANTIDADE . "&key=" . API_KEY . "&cx=" . CX;
+    }
+}

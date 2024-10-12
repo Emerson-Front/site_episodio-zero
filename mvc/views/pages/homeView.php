@@ -8,7 +8,7 @@
         </form>
 
         <?php
-        $lista = controllers\HomeController::pegar_animes();
+        $lista = mvc\controllers\HomeController::pegar_animes();
 
         foreach ($lista as $key => $value) {
 
@@ -61,7 +61,7 @@
         <h1>Concluídos</h1>
 
         <?php
-        $concluidos = controllers\HomeController::pegar_concluidos();
+        $concluidos = mvc\controllers\HomeController::pegar_concluidos();
 
         foreach ($concluidos as $key => $value) {
             $data = $value['data_concluido'];

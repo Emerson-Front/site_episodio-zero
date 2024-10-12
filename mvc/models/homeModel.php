@@ -1,6 +1,6 @@
 <?php
 
-namespace models;
+namespace mvc\models;
 
 class HomeModel
 {
@@ -17,8 +17,7 @@ class HomeModel
 
         # Se não tiver capa vai pesquisar na ferramenta do google
         if (count($capa) == 0) {
-            require 'core/capa.php';
-            $url = \core\Capa::construir_url(urlencode($nome));
+            $url = \Config::construir_url(urlencode($nome));
             $resposta = file_get_contents($url);
             $dados = json_decode($resposta, true);
 

@@ -1,14 +1,14 @@
 <?php
 
-namespace controllers;
-use models\AcessoModel;
+namespace mvc\controllers;
+use mvc\models\AcessoModel;
 
 class AcessoController
 {
     public function index()
     {
 
-        \views\MainView::render('acesso');
+        \mvc\views\MainView::render('acesso');
 
         
         if (isset($_POST['entrar'])) {
