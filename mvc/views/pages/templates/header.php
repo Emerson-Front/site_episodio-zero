@@ -36,7 +36,7 @@
     <header>
 
 
-        <h1><a href="/home">Episódio Zero</a></h1>
+        <h1><a href="home">Episódio Zero</a></h1>
 
         <nav>
 
