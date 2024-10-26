@@ -7,5 +7,5 @@ if (!isset($_SESSION)) {
 }
 
 
-$app = new \core\Application;
+$app = new core\Application;
 $app->executar();

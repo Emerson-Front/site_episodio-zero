@@ -7,10 +7,6 @@
     <input type="text" placeholder="Digite o nome de usuário" id="nome_registro" name="nome_registro" required>
     <span id="mensagem_nome" class="mensagem"></span>
 
-    <label>E-mail:</label>
-    <input type="email" placeholder="Digite seu e-mail" id="email_registro" name="email" required>
-    <span id="mensagem_nome" class="mensagem"></span>
-
     <label>Senha:</label>
     <input type="password" placeholder="Digite sua senha" name="senha_registro" id="senha_registro" required>
     <span id="mensagem_senha" class="mensagem"></span>
